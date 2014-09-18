@@ -3,6 +3,9 @@
 #include "AppFactory.h"
 #include "ModulesApp.h"
 
+#include "SmoothCirclesIC.h"
+#include "WettingNeumannBC.h"
+#include "CoupledFunctionAux.h"
 template<>
 InputParameters validParams<PandaApp>()
 {
@@ -37,6 +40,9 @@ PandaApp::registerApps()
 void
 PandaApp::registerObjects(Factory & factory)
 {
+registerInitialCondition(SmoothCirclesIC);
+registerBoundaryCondition(WettingNeumannBC);
+registerAux(CoupledFunctionAux);
 }
 
 void
