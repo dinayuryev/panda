@@ -2,8 +2,7 @@
 #define SMOOTHCIRCLESIC_H
 
 #include "Kernel.h"
-#include "InitialCondition.h"
-#include "SmoothCircleIC.h"
+#include "SmoothCircleBaseIC.h"
 
 #include <string>
 // create a user specified number of smooth circular grains IC
@@ -13,31 +12,29 @@ class SmoothCirclesIC;
 template<>
 InputParameters validParams<SmoothCirclesIC>();
 
-class SmoothCirclesIC : public SmoothCircleIC
+class SmoothCirclesIC : public SmoothCircleBaseIC
 {
 public:
 
   SmoothCirclesIC(const std::string & name,
                        InputParameters parameters);
 
-  virtual void initialSetup();
 
-  virtual Real value(const Point & p);
+  virtual void computeCircleRadii();
 
-  virtual RealGradient gradient(const Point & p);
+  virtual void computeCircleCenters();
 
 protected:
 
   unsigned int _numbub;
   unsigned int _numrows;
   Real _bubspac;
+  Real _x1;
+  Real _y1;
+  Real _z1;
   Real _z2;
-
- 
-
+  Real _radius;
   
- std::vector<Point> _bubcent;
-  std::vector<Real> _bubradi;
 };
 
 #endif //SMOOTHCIRCLESIC_H

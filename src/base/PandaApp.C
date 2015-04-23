@@ -6,6 +6,11 @@
 #include "SmoothCirclesIC.h"
 #include "WettingNeumannBC.h"
 #include "CoupledFunctionAux.h"
+#include "EnergyCoupledAux.h"
+#include "ElementIntegralGradPostprocessor.h"
+#include "PatternedBC.h"
+#include "ElementMaxTimeDerivative.h"
+#include "GrowthFunctionAux.h"
 template<>
 InputParameters validParams<PandaApp>()
 {
@@ -42,7 +47,12 @@ PandaApp::registerObjects(Factory & factory)
 {
 registerInitialCondition(SmoothCirclesIC);
 registerBoundaryCondition(WettingNeumannBC);
+registerBoundaryCondition(PatternedBC);
 registerAux(CoupledFunctionAux);
+registerAux(EnergyCoupledAux);
+registerAux(GrowthFunctionAux);
+registerPostprocessor(ElementIntegralGradPostprocessor);
+registerPostprocessor(ElementMaxTimeDerivative);
 }
 
 void
