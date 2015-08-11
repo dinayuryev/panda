@@ -23,8 +23,8 @@ InputParameters validParams<WettingNeumannBC>()
   return params;
 }
 
-WettingNeumannBC::WettingNeumannBC(const std::string & name, InputParameters parameters) :
-    IntegratedBC(name, parameters),
+WettingNeumannBC::WettingNeumannBC(const InputParameters & parameters) :
+    IntegratedBC(parameters),
     _func(getFunction("function"))
 {
 }

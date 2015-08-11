@@ -9,8 +9,8 @@ InputParameters validParams<EnergyCoupledAux>()
   return params;
 }
 
-EnergyCoupledAux::EnergyCoupledAux(const std::string & name, InputParameters parameters) :
-    AuxKernel(name, parameters),
+EnergyCoupledAux::EnergyCoupledAux(const InputParameters & parameters) :
+    AuxKernel(parameters),
 
 
     // We can couple in a value from one of our kernels with a call to coupledValueAux

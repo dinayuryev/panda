@@ -16,9 +16,8 @@ InputParameters validParams<SmoothCirclesIC>()
   return params;
 }
 
-SmoothCirclesIC::SmoothCirclesIC(const std::string & name,
-                                         InputParameters parameters) 
-    :SmoothCircleBaseIC(name, parameters),
+SmoothCirclesIC::SmoothCirclesIC(const InputParameters & parameters) 
+    :SmoothCircleBaseIC(parameters),
     _numbub(getParam<unsigned int>("numbub")),
     _numrows(getParam<unsigned int>("numrows")),
     _bubspac(getParam<Real>("bubspac")),

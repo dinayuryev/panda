@@ -33,7 +33,7 @@ public:
    * Factory constructor, takes parameters so that all derived classes can be built using the same
    * constructor.
    */
-  CoupledFunctionAux(const std::string & name, InputParameters parameters);
+  CoupledFunctionAux(const InputParameters & parameters);
 
 
 protected:

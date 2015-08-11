@@ -11,7 +11,7 @@ InputParameters validParams<PandaApp>();
 class PandaApp : public MooseApp
 {
 public:
-  PandaApp(const std::string & name, InputParameters parameters);
+  PandaApp(InputParameters parameters);
   virtual ~PandaApp();
 
   static void registerApps();

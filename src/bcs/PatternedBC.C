@@ -24,8 +24,8 @@ InputParameters validParams<PatternedBC>()
   return params;
 }
 
-PatternedBC::PatternedBC(const std::string & name, InputParameters parameters) :
-    IntegratedBC(name, parameters),
+PatternedBC::PatternedBC(const InputParameters & parameters) :
+    IntegratedBC(parameters),
     _value(getParam<Real>("value"))
 {
 }

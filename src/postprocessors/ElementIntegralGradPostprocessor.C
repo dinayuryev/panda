@@ -22,8 +22,8 @@ InputParameters validParams<ElementIntegralGradPostprocessor>()
   return params;
 }
 
-ElementIntegralGradPostprocessor::ElementIntegralGradPostprocessor(const std::string & name, InputParameters parameters) :
-    ElementIntegralVariablePostprocessor(name, parameters)
+ElementIntegralGradPostprocessor::ElementIntegralGradPostprocessor(const InputParameters & parameters) :
+    ElementIntegralVariablePostprocessor(parameters)
 {}
   
 

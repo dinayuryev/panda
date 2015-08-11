@@ -24,8 +24,8 @@ InputParameters validParams<CoupledFunctionAux>()
   return params;
 }
 
-CoupledFunctionAux::CoupledFunctionAux(const std::string & name, InputParameters parameters) :
-    AuxKernel(name, parameters),
+CoupledFunctionAux::CoupledFunctionAux(const InputParameters & parameters) :
+    AuxKernel(parameters),
 
 
     // We can couple in a value from one of our kernels with a call to coupledValueAux
