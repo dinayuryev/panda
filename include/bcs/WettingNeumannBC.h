@@ -30,7 +30,7 @@ InputParameters validParams<WettingNeumannBC>();
 class WettingNeumannBC : public IntegratedBC
 {
 public:
-  WettingNeumannBC(const std::string & name, InputParameters parameters);
+  WettingNeumannBC(const InputParameters & parameters);
 
 protected:
   virtual Real computeQpResidual();

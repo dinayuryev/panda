@@ -16,8 +16,7 @@ class SmoothCirclesIC : public SmoothCircleBaseIC
 {
 public:
 
-  SmoothCirclesIC(const std::string & name,
-                       InputParameters parameters);
+  SmoothCirclesIC(const InputParameters & parameters);
 
 
   virtual void computeCircleRadii();

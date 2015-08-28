@@ -29,7 +29,7 @@ InputParameters validParams<ElementMaxTimeDerivative>();
 class ElementMaxTimeDerivative : public ElementVariablePostprocessor
 {
 public:
-  ElementMaxTimeDerivative(const std::string & name, InputParameters parameters);
+  ElementMaxTimeDerivative(const InputParameters & parameters);
   virtual void initialize();
   virtual Real getValue();
   virtual void threadJoin(const UserObject & y);
