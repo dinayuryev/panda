@@ -25,8 +25,8 @@ InputParameters validParams<GrowthFunctionAux>()
   return params;
 }
 
-GrowthFunctionAux::GrowthFunctionAux(const std::string & name, InputParameters parameters) :
-    AuxKernel(name, parameters),
+GrowthFunctionAux::GrowthFunctionAux(const InputParameters & parameters) :
+    AuxKernel(parameters),
 
 
     // We can couple in a value from one of our kernels with a call to coupledValueAux

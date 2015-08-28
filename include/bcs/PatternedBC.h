@@ -31,7 +31,7 @@ InputParameters validParams<PatternedBC>();
 class PatternedBC : public IntegratedBC
 {
 public:
-  PatternedBC(const std::string & name, InputParameters parameters);
+  PatternedBC(const InputParameters & parameters);
 
 protected:
   virtual Real computeQpResidual();

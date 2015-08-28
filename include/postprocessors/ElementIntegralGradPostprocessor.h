@@ -20,7 +20,7 @@ class ElementIntegralGradPostprocessor :
   public ElementIntegralVariablePostprocessor
 {
 public:
-  ElementIntegralGradPostprocessor(const std::string & name, InputParameters parameters);
+  ElementIntegralGradPostprocessor(const InputParameters & parameters);
 
 protected:
   virtual Real computeQpIntegral();
