@@ -41,10 +41,11 @@ protected:
   virtual Real computeValue();
 
   VariableValue & _coupled_val;
-  
+   
+  Real _value;
   Function & _func;
 
-  Real _value;
+  
 };
 
 #endif // GROWTHFUNCTIONAUX_H

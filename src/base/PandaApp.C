@@ -11,6 +11,9 @@
 #include "PatternedBC.h"
 #include "ElementMaxTimeDerivative.h"
 #include "GrowthFunctionAux.h"
+#include "WettingAngleNeumannBC.h"
+#include "NoEvapFreeEnergy.h"
+#include "LayerSingleDefectIC.h"
 template<>
 InputParameters validParams<PandaApp>()
 {
@@ -46,9 +49,12 @@ void
 PandaApp::registerObjects(Factory & factory)
 {
 registerInitialCondition(SmoothCirclesIC);
+registerInitialCondition(LayerSingleDefectIC);
 registerBoundaryCondition(WettingNeumannBC);
 registerBoundaryCondition(PatternedBC);
+registerBoundaryCondition(WettingAngleNeumannBC);
 registerAux(CoupledFunctionAux);
+registerMaterial(NoEvapFreeEnergy);
 registerAux(EnergyCoupledAux);
 registerAux(GrowthFunctionAux);
 registerPostprocessor(ElementIntegralGradPostprocessor);
