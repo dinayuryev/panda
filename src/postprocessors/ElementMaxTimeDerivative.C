@@ -27,8 +27,7 @@ InputParameters validParams<ElementMaxTimeDerivative>()
   return params;
 }
 
-ElementMaxTimeDerivative::ElementMaxTimeDerivative(const InputParameters & parameters) :
-  ElementVariablePostprocessor(parameters),
+ElementMaxTimeDerivative::ElementMaxTimeDerivative(const InputParameters & parameters):ElementVariablePostprocessor(parameters),
   _value(-std::numeric_limits<Real>::max())
 {}
 

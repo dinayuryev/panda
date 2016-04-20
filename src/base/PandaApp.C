@@ -2,6 +2,7 @@
 #include "Moose.h"
 #include "AppFactory.h"
 #include "ModulesApp.h"
+#include "MooseSyntax.h"
 
 #include "SmoothCirclesIC.h"
 #include "WettingNeumannBC.h"
@@ -13,7 +14,7 @@
 #include "GrowthFunctionAux.h"
 #include "WettingAngleNeumannBC.h"
 #include "NoEvapFreeEnergy.h"
-#include "LayerSingleDefectIC.h"
+
 template<>
 InputParameters validParams<PandaApp>()
 {
@@ -48,7 +49,6 @@ void
 PandaApp::registerObjects(Factory & factory)
 {
 registerInitialCondition(SmoothCirclesIC);
-registerInitialCondition(LayerSingleDefectIC);
 registerBoundaryCondition(WettingNeumannBC);
 registerBoundaryCondition(PatternedBC);
 registerBoundaryCondition(WettingAngleNeumannBC);
