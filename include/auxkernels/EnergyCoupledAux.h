@@ -26,8 +26,7 @@ public:
 protected:
   virtual Real computeValue();
 
-  VariableValue & _coupled_val;
-
+  const VariableValue & _coupled_val;
 };
 
 #endif // ENERGYCOUPLEDAUX_H
