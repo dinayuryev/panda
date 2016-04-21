@@ -12,9 +12,9 @@
     order = FIRST # order for element shape function
     family = LAGRANGE # shape function type
     [./InitialCondition]
-      # Initial condition creates 6 circles  
-      type = SpecifiedSmoothCircleIC 
-      variable = c  
+      # Initial condition creates 6 circles
+      type = SpecifiedSmoothCircleIC
+      variable = c
       x_positions = '-62.5 -37.5 -12.5 12.5 37.5 62.5'
       y_positions = '0 0 0 0 0 0'
       z_positions= '-22 -22 -22 -22 -22 -22'
@@ -154,9 +154,14 @@
   scheme = BDF2
 
   solve_type = 'PJFNK'
-  petsc_options_iname = '-pc_type -ksp_grmres_restart -sub_ksp_type -sub_pc_type -pc_asm_overlap'
-  petsc_options_value = 'asm         31   preonly   lu      1'
-  
+
+  # Original PETSC options.
+  # petsc_options_iname = '-pc_type -ksp_grmres_restart -sub_ksp_type -sub_pc_type -pc_asm_overlap'
+  # petsc_options_value = 'asm         31   preonly   lu      1'
+
+  petsc_options_iname = '-pc_type -pc_asm_overlap  -sub_pc_type -sub_pc_factor_levels'
+  petsc_options_value = 'asm      1                ilu          2'
+
   l_max_its = 30
   l_tol = 1.0e-3
   nl_max_its = 10
@@ -191,4 +196,3 @@
     execute_on = 'timestep_end'
   [../]
 []
-
