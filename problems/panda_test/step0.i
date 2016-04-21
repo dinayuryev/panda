@@ -188,7 +188,7 @@
   [../]
   [./out]
     type = XDA
-   execute_on = 'final'
+    execute_on = 'timestep_end'
   [../]
 []
 
